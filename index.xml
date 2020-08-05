@@ -1,14 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Team7even</title>
-    <link>http://team0se7en.github.io/</link>
-    <description>Recent content on Team7even</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    
-	<atom:link href="http://team0se7en.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Team7even</title>
+        <link>http://team0se7en.github.io/</link>
+        <description>Blog Website for Team7even</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language>
+            <atom:link href="http://team0se7en.github.io/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
 </rss>
