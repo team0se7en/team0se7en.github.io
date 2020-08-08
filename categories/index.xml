@@ -1,7 +1,35 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Categories - Category - Team7even</title>
-        <link>http://team0se7en.github.io/categories/</link>
-        <description>Categories - Category - Team7even</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="http://team0se7en.github.io/categories/" rel="self" type="application/rss+xml" /></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Team7even</title>
+    <link>https://team0se7en.github.io/categories/</link>
+    <description>Recent content in Categories on Team7even</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>a.boutouchent@esi-sba.dz (member)</managingEditor>
+    <webMaster>a.boutouchent@esi-sba.dz (member)</webMaster>
+    <lastBuildDate>Sat, 08 Aug 2020 17:43:09 +0100</lastBuildDate>
+    
+	<atom:link href="https://team0se7en.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CTF Writeups</title>
+      <link>https://team0se7en.github.io/categories/ctf-writeups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>a.boutouchent@esi-sba.dz (member)</author>
+      <guid>https://team0se7en.github.io/categories/ctf-writeups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HackTheBox Walkthrough</title>
+      <link>https://team0se7en.github.io/categories/htb-walkthrough/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>a.boutouchent@esi-sba.dz (member)</author>
+      <guid>https://team0se7en.github.io/categories/htb-walkthrough/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
 </rss>
