@@ -33,7 +33,7 @@
                             "url": "https:\/\/team0se7en.github.io\/cybrics2020-otp\/featured.png",
                             "width":  767 ,
                             "height":  158 
-                        }],"genre": "posts","keywords": "linux, ctb, cybrics-ctf, ssh","wordcount":  0 ,
+                        }],"genre": "posts","keywords": "linux, ctb, cybrics-ctf, ssh","wordcount":  704 ,
         "url": "https:\/\/team0se7en.github.io\/cybrics2020-otp\/","datePublished": "2020-08-08T17:43:09+01:00","dateModified": "2020-08-08T17:43:09+01:00","publisher": {
             "@type": "Organization",
             "name": "Team7even","logo": {
@@ -115,8 +115,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Cybrics2020 Otp</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/Fa2y" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Fa2y</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf-writeups/"><i class="far fa-folder fa-fw"></i>CTF Writeups</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-08">2020-08-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;0 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;0 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-08">2020-08-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;704 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -129,8 +129,125 @@
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#challenge-info">Challenge Info</a></li>
+    <li><a href="#tl-dr">TL-DR</a></li>
+    <li><a href="#writeup-summary">Writeup Summary</a>
+      <ul>
+        <li><a href="#initial-understanding">Initial Understanding</a></li>
+        <li><a href="#blackbox-analyses">Blackbox Analyses</a></li>
+        <li><a href="#ssh-session">SSH session</a></li>
+        <li><a href="#connecting-to-mongodb">Connecting to mongodb</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="challenge-info">Challenge Info</h2>
+<p>A crack the box challenge (hackthebox/vulnhub-like) <code>http://otp-cybrics2020.ctf.su/</code> the web-page provides a input for auth token and a the client binary and the server&rsquo;s, and the source code of the server.</p>
+<figure>
+    <img src="webpage.png"
+         alt="page"/> <figcaption>
+            <h4>Main Page</h4>
+        </figcaption>
+</figure>
+
+<h2 id="tl-dr">TL-DR</h2>
+<p>We discover the client binary is using ssh, we get the private key out of the binary and get the user also we use ssh keys to do forward port tunneling of the mongodb port from the server to our machine we connect to the db and get the otp of the admin provide it to the website and we get the flag.</p>
+<h2 id="writeup-summary">Writeup Summary</h2>
+<ul>
+<li>Understanding how the service works.</li>
+<li>Doing some blackbox analyses on the client binary.</li>
+<li>Port forwarding the mongodb port to our machine.</li>
+<li>Getting the otp from the mongodb and submitting it to get the flag.</li>
+</ul>
+<h3 id="initial-understanding">Initial Understanding</h3>
+<p>The client binary can be used to login or register an account, the login mechanism do it&rsquo;s magic and get u a token :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./client login -l user7 -p userpass7
+Response: SUCCESS: ac003f82-edfc-4855-b761-bdc59406d8d4
+</code></pre></td></tr></table>
+</div>
+</div><p>The token can be submitted into the webpage but get nothing because we&rsquo;re not admin:</p>
+<figure>
+    <img src="not_admin.png"
+         alt="page"/> <figcaption>
+            <h4>Cabinet Page</h4>
+        </figcaption>
+</figure>
+
+<p>that means the admin token is the target.
+The server binary we can understand it&rsquo;s functionality from the source code, It&rsquo;s expect 3 lines as input, first one is the action(login/register), the second is username, the third is password; It connects to a mongodb and create a user in case of register or verify the creds and create an otp in case of login.
+PS: the server&rsquo;s code import mongodb configs (username,pass, host,port) from a .env file but still uses hardcoded creds, dbname and collection.</p>
+<h3 id="blackbox-analyses">Blackbox Analyses</h3>
+<p>Both the client and the server were written in go, we first tried reverse engineering it but we all know how messy that can be, so we tried some black box analyses, First we analyzed the network using strace : <code>strace -f -e trace=network ./client login -l user7 -p userpass7</code></p>
+<figure>
+    <img src="strace.png"
+         alt="page"/> <figcaption>
+            <h4>Strace</h4>
+        </figcaption>
+</figure>
+
+<p>We see the client app resolves the domain <code>otp-cybrics2020.ctf.su</code> and gets it&rsquo;s ip address <code>34.76.112.206</code> but we can&rsquo;t get how the data is sent, so we decide to capture the network sent to that specific ip, we used tcpdump : <code>tcpdump -i wlp7s0 dst 34.76.112.206 -w Capture.pcap</code></p>
+<p>Taking a look at the capture with wireshark:</p>
+<figure>
+    <img src="wireshark.png"
+         alt="page"/> <figcaption>
+            <h4>Wireshark</h4>
+        </figcaption>
+</figure>
+
+<p>We confirmed the app is using ssh but we have no creds or ssh keys since the packets are encrypted, running strings on the app and greping for specific patterns we got ssh private keys <a href="src/id_rsa" rel="">id_rsa</a></p>
+<p>We need a username now, we tried guessing nothing came out, To try and get the username we modified out <code>/etc/hosts</code> so the challenge domain points back to our loopback address <code>127.0.0.1</code> we run the binary and the we check our ssh logs with: <code>systemctl status sshd</code>
+we got : <code>sshd[13342]: Invalid user guest from 127.0.0.1 port 40898</code></p>
+<p>The user is guest, I guess our guess work wasn&rsquo;t on point 😛 .</p>
+<p>Now we got everything for the ssh connection.</p>
+<h3 id="ssh-session">SSH session</h3>
+<p>Connection to the ssh session we don&rsquo;t get a shell but instead a clear prompt, poking at it a little we know it&rsquo;s the server&rsquo;s binary, we don&rsquo;t get much, but it&rsquo;s ssh and ssh has many features builtin on it, one of many is port forwarding (more on port forwarding over <a href="https://www.ssh.com/ssh/tunneling/example" target="_blank" rel="noopener noreffer">here</a> ), we port forward the mongodb port 27017 since we already got the creds from the source code of the server.
+<code>ssh -L 27017:localhost:27017 guest@34.76.112.206 -i id_rsa</code></p>
+<p>Checking open port on our machine and:
+<code>tcp        0      0 127.0.0.1:27017         0.0.0.0:*               LISTEN      9530/ssh</code>
+It&rsquo;s open.</p>
+<h3 id="connecting-to-mongodb">Connecting to mongodb</h3>
+<p>Since we already have the creds <code>mongodb://admin:admin@localhost:27017</code> and the db name <code>cybrics</code> (Both from the source code).
+We can connect right to the db away : <code>mongo -u admin -p admin --authenticationDatabase cybrics</code></p>
+<p>We already know the schema from the source so we right away query the admin user</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; use cybrics
+switched to db cybrics
+&gt; db
+cybrics
+&gt; db.users.find({username : &#34;admin&#34;})
+{ &#34;_id&#34; : ObjectId(&#34;5f1ae2e97e2bd0263657b0ee&#34;), &#34;username&#34; : &#34;admin&#34;, &#34;password&#34; : &#34;j77d32g72373ggasdkasdGG&amp;SD&#34;, &#34;otp&#34; : &#34;f41a137f-aeb0-4518-9d20-2aafc4fcb90f&#34; }
+&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>We get the admin&rsquo;s otp : <code>f41a137f-aeb0-4518-9d20-2aafc4fcb90f</code>
+We submit it in the web to get the flag:</p>
+<figure>
+    <img src="flag.png"
+         alt="page"/> <figcaption>
+            <h4>Flag</h4>
+        </figcaption>
+</figure>
+
+<p>Flag: <code>cybrics{n07_S0_D1fF1cuL7_8U7_4lw4yS_chECK_P0R7_F0rw4Rd1N9}</code></p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

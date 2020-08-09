@@ -10,6 +10,7 @@
     <pubDate>Sat, 08 Aug 2020 17:43:09 &#43;0100</pubDate>
     <author>Author</author>
     <guid>https://team0se7en.github.io/cybrics2020-otp/</guid>
-    <description><![CDATA[Writeup for Cybrics CTF 2020, challenge name: OTP]]></description>
+    <description><![CDATA[Challenge Info A crack the box challenge (hackthebox/vulnhub-like) http://otp-cybrics2020.ctf.su/ the web-page provides a input for auth token and a the client binary and the server&rsquo;s, and the source code of the server.
+  Main Page   TL-DR We discover the client binary is using ssh, we get the private key out of the binary and get the user also we use ssh keys to do forward port tunneling of the mongodb port from the server to our machine we connect to the db and get the otp of the admin provide it to the website and we get the flag.]]></description>
 </item></channel>
 </rss>
