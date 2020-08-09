@@ -4,9 +4,17 @@
         <link>https://team0se7en.github.io/</link>
         <description>Team7even Blog, Contains writeups and Walkthrough for htb boxes</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>a.boutouchent@esi-sba.dz (member)</managingEditor>
-            <webMaster>a.boutouchent@esi-sba.dz (member)</webMaster><lastBuildDate>Sat, 08 Aug 2020 17:43:09 &#43;0100</lastBuildDate>
+            <webMaster>a.boutouchent@esi-sba.dz (member)</webMaster><lastBuildDate>Sun, 09 Aug 2020 20:55:36 &#43;0100</lastBuildDate>
             <atom:link href="https://team0se7en.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Pwn2win2020 Androids Encryption</title>
+    <link>https://team0se7en.github.io/pwn2win2020-androids-encryption/</link>
+    <pubDate>Sun, 09 Aug 2020 20:55:36 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>https://team0se7en.github.io/pwn2win2020-androids-encryption/</guid>
+    <description><![CDATA[Challenge Info ​	The challenge is a crypto challenge from the pwn2win event , it&rsquo;s focused on the symmetric cryptography and especially the aes block cipher.So we are given remote connection nc encryption.pwn2.win 1337 and the python script that is running in the remote server.py .
+Writeup Summary   gain general information   deep look into encrypt your secret   solution   general information ​	By the first look at the server.]]></description>
+</item><item>
     <title>Cybrics2020 Otp</title>
     <link>https://team0se7en.github.io/cybrics2020-otp/</link>
     <pubDate>Sat, 08 Aug 2020 17:43:09 &#43;0100</pubDate>

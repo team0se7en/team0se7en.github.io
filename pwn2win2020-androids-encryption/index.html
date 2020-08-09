@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Pwn2win2020 Androids Encryption - Team7even</title><meta name="Description" content="Writeup for Pwn2Win CTF 2020, challenge name: Androids_Encryption"><meta property="og:title" content="Pwn2win2020 Androids Encryption" />
+<meta property="og:description" content="Writeup for Pwn2Win CTF 2020, challenge name: Androids_Encryption" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://team0se7en.github.io/pwn2win2020-androids-encryption/" />
+<meta property="og:image" content="https://team0se7en.github.io/pwn2win2020-androids-encryption/featured.png"/>
+<meta property="article:published_time" content="2020-08-09T20:55:36+01:00" />
+<meta property="article:modified_time" content="2020-08-09T20:55:36+01:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://team0se7en.github.io/pwn2win2020-androids-encryption/featured.png"/>
+<meta name="twitter:title" content="Pwn2win2020 Androids Encryption"/>
+<meta name="twitter:description" content="Writeup for Pwn2Win CTF 2020, challenge name: Androids_Encryption"/>
+<meta name="application-name" content="Team7even">
+<meta name="apple-mobile-web-app-title" content="Team7even"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://team0se7en.github.io/pwn2win2020-androids-encryption/" /><link rel="prev" href="https://team0se7en.github.io/cybrics2020-otp/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Pwn2win2020 Androids Encryption",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/team0se7en.github.io\/pwn2win2020-androids-encryption\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/team0se7en.github.io\/pwn2win2020-androids-encryption\/featured.png",
+                            "width":  1920 ,
+                            "height":  940 
+                        }],"genre": "posts","keywords": "symmetric-crypto, aes, pwn2win-ctf, crypto","wordcount":  734 ,
+        "url": "https:\/\/team0se7en.github.io\/pwn2win2020-androids-encryption\/","datePublished": "2020-08-09T20:55:36+01:00","dateModified": "2020-08-09T20:55:36+01:00","publisher": {
+            "@type": "Organization",
+            "name": "Team7even","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/team0se7en.github.io\/images\/logo.png",
+                    "width":  200 ,
+                    "height":  200 
+                }},"author": {
+                "@type": "Person",
+                "name": "kero"
+            },"description": "Writeup for Pwn2Win CTF 2020, challenge name: Androids_Encryption"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Team7even"><span class="header-title-pre"><i class='fas fa-skull-crossbones'></i></span>Team7even</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search for writeups/Walkthrough&#39;s" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Team7even"><span class="header-title-pre"><i class='fas fa-skull-crossbones'></i></span>Team7even</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search for writeups/Walkthrough&#39;s" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Pwn2win2020 Androids Encryption</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/akram09" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>kero</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf-writeups/"><i class="far fa-folder fa-fw"></i>CTF Writeups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-09">2020-08-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;734 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/pwn2win2020-androids-encryption/featured.png"
+        data-srcset="/pwn2win2020-androids-encryption/featured.png, /pwn2win2020-androids-encryption/featured.png 1.5x, /pwn2win2020-androids-encryption/featured.png 2x"
+        data-sizes="auto"
+        alt="/pwn2win2020-androids-encryption/featured.png"
+        title="Writeup for Pwn2Win CTF 2020, challenge name: Androids_Encryption" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#challenge-info">Challenge Info</a></li>
+        <li><a href="#writeup-summary">Writeup Summary</a>
+          <ul>
+            <li><a href="#gain-general-information">gain general information</a></li>
+            <li><a href="#deep-look-into-encrypt-your-secret">deep look into encrypt your secret</a></li>
+            <li><a href="#solution">solution</a></li>
+          </ul>
+        </li>
+        <li><a href="#general-information">general information</a></li>
+        <li><a href="#deep-look-into-encrypt-your-secret-1">deep look into encrypt your secret</a></li>
+        <li><a href="#solution-1">Solution</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="challenge-info">Challenge Info</h3>
+<p>​	The challenge is a crypto challenge from the pwn2win event , it&rsquo;s focused on the symmetric cryptography and especially the aes block cipher.So we are given remote connection   <code>nc encryption.pwn2.win 1337</code>  and the python script that is running in the remote <code>server.py</code>  .</p>
+<h3 id="writeup-summary">Writeup Summary</h3>
+<ul>
+<li>
+<h4 id="gain-general-information">gain general information</h4>
+</li>
+<li>
+<h4 id="deep-look-into-encrypt-your-secret">deep look into encrypt your secret</h4>
+</li>
+<li>
+<h4 id="solution">solution</h4>
+</li>
+</ul>
+<h3 id="general-information">general information</h3>
+<p>​	By the first look at the <code>server.py</code> script we notice there are 3 main functions first one is <code>def encrypt(txt, key, iv)</code> where you pass the plaintext the key and iv this function will check that the plaintext length is multiple of Block Size which is 128 and then it will encrypt the plaintext with custom implementation of AES , the second one is <code>enc_plaintext</code>this function that we will interact with it will take our plaintext and decode it as a base64 and pass it to <code>encrypt</code> with <code>key1</code> and <code>iv1</code> which are secrets . The last function is <code>enc_flag()</code> it will encrypt the flag with <code>key2</code> and <code>iv2</code> which their difinition is :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">	<span class="n">iv2</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key1</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_ECB</span><span class="p">)</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">iv1</span><span class="p">)</span>
+	<span class="n">key2</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">to_blocks</span><span class="p">(</span><span class="n">flag</span><span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>by looking at the <code>xor</code> function we noticed that if two parametres  <code>a,b</code> are passed then it will calculate <code>a xor b</code> else if one parametre <code>a</code> is passed it will return <code>a[0] xor \x00 *len(a[0])</code> so it will return the first block xored with 00 and that meen it will return the first block .</p>
+<h3 id="deep-look-into-encrypt-your-secret-1">deep look into encrypt your secret</h3>
+<p>​	After looking in the function i noticed it doing 2 things interesting :</p>
+<ul>
+<li>
+<p>first thing is that it is returning to us the iv passed in parametre + the cipher so for example if we passed <code>iv2</code> to the function than we get as a result <code>iv2+ cipher</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">iv</span><span class="o">+</span><span class="n">ctxt</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>PS: of course all inputs and outputs are encoded with base64</p>
+</li>
+<li>
+<p>the second  interesting thing is that it is overriding the <code>iv2</code> and <code>key2</code> that are used in encrypting the flag :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">iv2</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key2</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_ECB</span><span class="p">)</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">iv2</span><span class="p">)</span>
+<span class="n">key2</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">to_blocks</span><span class="p">(</span><span class="n">ctxt</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>so the new <code>iv2</code> is the decryption of the previous <code>iv2</code> with <code>key2</code> and the new <code>key2</code> is the xor of the cipher calculated and as we have discussed <code>xor</code> function when we pass one parametre it will return the first block of the passed object  so <code>key2 = cipher[0]</code> so from the result <code>iv+ctx </code> we can get <code>iv1 </code> and <code>key2</code> from the cipher and to get the next value of <code>iv2</code> we need the value of <code>key2</code> before change .so the idea of the challenge is to try to guess the <code>iv2</code> and <code>key2</code> that will be used next time we encrypt the flag .</p>
+</li>
+</ul>
+<h3 id="solution-1">Solution</h3>
+<p>​	after trying in a paper the different combination of commandes that will allow us to get the key and initial vector i finnaly found the solution it is bit tricky so what we will do is :</p>
+<ol>
+<li>
+<p>we will send a random payload with 16 bytes  to the oracle that will return us <code>iv1 + cipher</code> and from the cipher we can get  the new value <code>key2</code> because as we said <code>key2 = a[0]</code> the new key is the first block of cipher</p>
+</li>
+<li>
+<p>next we will send the encrypt flag command that will return to us  <code>iv2 + flag_cipher</code> and here we can use the result of the first step which is key2 and get the new value of <code>iv2</code> because it will be changed by <code>iv2 = AES.new(key2, AES.MODE_ECB).decrypt(iv2)</code>  and also we update the value of <code>key2</code> now we have the <code>key2</code> and <code>iv2</code> values and we can use it to decipher the flag next time because this value will be used next time</p>
+</li>
+<li>
+<p>we will send the encrypt flag command and decrypt the cipher :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">aes</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key2</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_ECB</span><span class="p">)</span>
+<span class="n">curr</span> <span class="o">=</span> <span class="n">iv2</span>
+<span class="n">bs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">key2</span><span class="p">)</span>
+<span class="n">text</span><span class="o">=</span><span class="sa">b</span><span class="s2">&#34;&#34;</span>
+<span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">blocks</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">+=</span><span class="n">xor</span><span class="p">(</span><span class="n">curr</span><span class="p">,</span> <span class="n">aes</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">block</span><span class="p">))</span>
+    <span class="n">curr</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="n">bs</span><span class="p">:],</span> <span class="n">block</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>the challenge used a modified version of aes ecb it work like this <code>cipher1 = aes(text1 xor iv)</code> then <code>cipher2 = aes(text2 xor (text1 xor cipher1))</code> and it do this for each block . so for the decryption part we can do this</p>
+<p><code>text1 = iv xor aes.decrypt(cipher1)</code> and for other blocks <code>textI= (cipherJ xor textJ) xor aes.decrypt(cipherI) </code> where <code>J = I-1</code>.</p>
+</li>
+</ol>
+<p>and finnaly we got the flag <code>CTF-BR{kn3W_7h4T_7hEr3_4r3_Pc8C_r3pe471ti0ns?!?}</code> . awesome challenge had so much fun solving it <em>.</em></p>
+<p>​</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-08-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/pwn2win2020-androids-encryption/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://team0se7en.github.io/pwn2win2020-androids-encryption/" data-title="Pwn2win2020 Androids Encryption" data-via="team7even1" data-hashtags="symmetric-crypto,aes,pwn2win-ctf,crypto"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://team0se7en.github.io/pwn2win2020-androids-encryption/" data-hashtag="symmetric-crypto"><i class="fab fa-facebook-square fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/symmetric-crypto/">symmetric-crypto</a>,&nbsp;<a href="/tags/aes/">aes</a>,&nbsp;<a href="/tags/pwn2win-ctf/">pwn2win-ctf</a>,&nbsp;<a href="/tags/crypto/">crypto</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/cybrics2020-otp/" class="prev" rel="prev" title="Cybrics2020 Otp"><i class="fas fa-angle-left fa-fw"></i>Cybrics2020 Otp</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">member</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="https://team07even.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-174974975-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-174974975-1" async></script></body>
+</html>

@@ -2,16 +2,21 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://team0se7en.github.io/pwn2win2020-androids-encryption/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://team0se7en.github.io/cybrics2020-otp/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://team0se7en.github.io/categories/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://team0se7en.github.io/categories/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://team0se7en.github.io/tags/aes/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://team0se7en.github.io/categories/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://team0se7en.github.io/categories/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://team0se7en.github.io/tags/crypto/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://team0se7en.github.io/categories/ctf-writeups/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://team0se7en.github.io/posts/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://team0se7en.github.io/tags/pwn2win-ctf/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://team0se7en.github.io/tags/symmetric-crypto/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://team0se7en.github.io/tags/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://team0se7en.github.io/</loc><lastmod>2020-08-09T20:55:36&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://team0se7en.github.io/tags/ctb/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://team0se7en.github.io/categories/ctf-writeups/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://team0se7en.github.io/tags/cybrics-ctf/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://team0se7en.github.io/tags/linux/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://team0se7en.github.io/posts/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://team0se7en.github.io/tags/ssh/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://team0se7en.github.io/tags/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://team0se7en.github.io/</loc><lastmod>2020-08-08T17:43:09&#43;01:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://team0se7en.github.io/categories/ctf-writeups/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://team0se7en.github.io/categories/htb-walkthrough/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

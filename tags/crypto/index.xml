@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>crypto - Tag - Team7even</title>
+        <link>https://team0se7en.github.io/tags/crypto/</link>
+        <description>crypto - Tag - Team7even</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>a.boutouchent@esi-sba.dz (member)</managingEditor>
+            <webMaster>a.boutouchent@esi-sba.dz (member)</webMaster><lastBuildDate>Sun, 09 Aug 2020 20:55:36 &#43;0100</lastBuildDate><atom:link href="https://team0se7en.github.io/tags/crypto/" rel="self" type="application/rss+xml" /><item>
+    <title>Pwn2win2020 Androids Encryption</title>
+    <link>https://team0se7en.github.io/pwn2win2020-androids-encryption/</link>
+    <pubDate>Sun, 09 Aug 2020 20:55:36 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>https://team0se7en.github.io/pwn2win2020-androids-encryption/</guid>
+    <description><![CDATA[Challenge Info ​	The challenge is a crypto challenge from the pwn2win event , it&rsquo;s focused on the symmetric cryptography and especially the aes block cipher.So we are given remote connection nc encryption.pwn2.win 1337 and the python script that is running in the remote server.py .
+Writeup Summary   gain general information   deep look into encrypt your secret   solution   general information ​	By the first look at the server.]]></description>
+</item></channel>
+</rss>
