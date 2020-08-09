@@ -11,9 +11,9 @@
 
 - #### deep look into encrypt your secret 
 
-- #### solution 
+- #### Solution 
 
-### general information 
+### gain general information
 
 ​	By the first look at the `server.py` script we notice there are 3 main functions first one is `def encrypt(txt, key, iv)` where you pass the plaintext the key and iv this function will check that the plaintext length is multiple of Block Size which is 128 and then it will encrypt the plaintext with custom implementation of AES , the second one is `enc_plaintext`this function that we will interact with it will take our plaintext and decode it as a base64 and pass it to `encrypt` with `key1` and `iv1` which are secrets . The last function is `enc_flag()` it will encrypt the flag with `key2` and `iv2` which their difinition is :
 
