@@ -33,7 +33,7 @@
                             "url": "https:\/\/team0se7en.github.io\/csawquals20-webrtc\/featured.png",
                             "width":  1739 ,
                             "height":  467 
-                        }],"genre": "posts","keywords": "turn, redis, rce, csawquals20, web","wordcount":  856 ,
+                        }],"genre": "posts","keywords": "turn, redis, rce, csawquals20, web","wordcount":  860 ,
         "url": "https:\/\/team0se7en.github.io\/csawquals20-webrtc\/","datePublished": "2020-09-14T22:23:36+01:00","dateModified": "2020-09-14T22:23:36+01:00","publisher": {
             "@type": "Organization",
             "name": "Team7even","logo": {
@@ -115,7 +115,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">CsawQuals2020 WebRTC </h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/th3happybit" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>oussama</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf-writeups/"><i class="far fa-folder fa-fw"></i>CTF Writeups</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-14">2020-09-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;856 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-14">2020-09-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;860 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -140,6 +140,13 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="web-real-time-chat">WEB real time chat</h1>
+<figure>
+    <img src="challenge.png"
+         alt="page"/> <figcaption>
+            <h4>Challenge Info</h4>
+        </figcaption>
+</figure>
+
 <h2 id="writeup-summary">Writeup Summary</h2>
 <ul>
 <li>Challenge description</li>
@@ -251,8 +258,15 @@ CMD [&#34;supervisord&#34;]
 </div>
 </div><h3 id="enumeration">Enumeration</h3>
 <p>At first, we took a look at those files, which show up that there are 3 servers running, a Redis server (not exposed to external), gunicorn (flask web app server), and turn ( for webrtc ).</p>
-<p>then we took a look at the web app, basically the frontend and what does it do,
-we found that it&rsquo;s sending requests to the flask app (the API) (OBVIOUSLY), and the file <code>rtc.js</code> is the source of this request, we checked it out, and after reading the some code we found the turn communication config, the turn host <code>web.chal.csaw.io:3478</code>, the username and password (empty):</p>
+<p>then we took a look at the web app, basically the frontend and what does it do,</p>
+<figure>
+    <img src="frontend.png"
+         alt="page"/> <figcaption>
+            <h4>Frontend</h4>
+        </figcaption>
+</figure>
+
+<p>we found that it&rsquo;s sending requests to the flask app (the API) (OBVIOUSLY), and the file <code>rtc.js</code> is the source of this request, we checked it out, and after reading the some code we found the turn communication config, the turn host <code>web.chal.csaw.io:3478</code>, the username and password (empty):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -315,6 +329,13 @@ So here is how it has been done:</p>
 </div>
 </div><p>then choose the Interactive shell: <code>cat /flag.txt</code>
 <code>flag{ar3nt_u_STUNned_any_t3ch_w0rks_@_all?}</code></p>
+<figure>
+    <img src="flag.png"
+         alt="page"/> <figcaption>
+            <h4>Flag</h4>
+        </figcaption>
+</figure>
+
 <p>in this challenge, we learned a lot, it&rsquo;s a good challenge that we really loved, big thanks to CSAW CTF 2020 organizers.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">

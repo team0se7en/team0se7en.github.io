@@ -3,6 +3,8 @@
 
 # WEB real time chat
 
+{{<figure src="challenge.png" alt="page" style="zoom:25%;" title="Challenge Info">}}
+
 ## Writeup Summary
 
 - Challenge description
@@ -73,6 +75,9 @@ CMD ["supervisord"]
 At first, we took a look at those files, which show up that there are 3 servers running, a Redis server (not exposed to external), gunicorn (flask web app server), and turn ( for webrtc ).
 
 then we took a look at the web app, basically the frontend and what does it do,
+
+{{<figure src="frontend.png" alt="page" style="zoom:25%;" title="Frontend">}}
+
 we found that it's sending requests to the flask app (the API) (OBVIOUSLY), and the file `rtc.js` is the source of this request, we checked it out, and after reading the some code we found the turn communication config, the turn host `web.chal.csaw.io:3478`, the username and password (empty):
 
 ```js
@@ -130,6 +135,8 @@ So here is how it has been done:
 
 then choose the Interactive shell: `cat /flag.txt`
 `flag{ar3nt_u_STUNned_any_t3ch_w0rks_@_all?}`
+
+{{<figure src="flag.png" alt="page" style="zoom:60%;" title="Flag">}}
 
 in this challenge, we learned a lot, it's a good challenge that we really loved, big thanks to CSAW CTF 2020 organizers.
 
