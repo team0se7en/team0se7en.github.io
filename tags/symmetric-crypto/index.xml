@@ -4,17 +4,7 @@
         <link>https://team0se7en.github.io/tags/symmetric-crypto/</link>
         <description>symmetric-crypto - Tag - Team7even</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>a.boutouchent@esi-sba.dz (member)</managingEditor>
-            <webMaster>a.boutouchent@esi-sba.dz (member)</webMaster><lastBuildDate>Mon, 14 Sep 2020 22:23:36 &#43;0100</lastBuildDate><atom:link href="https://team0se7en.github.io/tags/symmetric-crypto/" rel="self" type="application/rss+xml" /><item>
-    <title>CsawQuals2020 WebRTC </title>
-    <link>https://team0se7en.github.io/csawquals20-webrtc/</link>
-    <pubDate>Mon, 14 Sep 2020 22:23:36 &#43;0100</pubDate>
-    <author>Author</author>
-    <guid>https://team0se7en.github.io/csawquals20-webrtc/</guid>
-    <description><![CDATA[WEB real time chat Writeup Summary  Challenge description Enumeration  Challenge description I started playing around with some fancy new Web 3.1 technologies! This RTC tech looks cool, but there's a lot of setup to get it working... I hope it's all secure.
-http://web.chal.csaw.io:4955
-they also included some files: Dockerfile , supervisord.conf and app.py. supervisord.conf:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  [supervisord] nodaemon=true [program:gunicorn3] command=gunicorn3 --workers=10 -b 0.]]></description>
-</item><item>
+            <webMaster>a.boutouchent@esi-sba.dz (member)</webMaster><lastBuildDate>Sun, 09 Aug 2020 20:55:36 &#43;0100</lastBuildDate><atom:link href="https://team0se7en.github.io/tags/symmetric-crypto/" rel="self" type="application/rss+xml" /><item>
     <title>Pwn2win2020 Androids Encryption</title>
     <link>https://team0se7en.github.io/pwn2win2020-androids-encryption/</link>
     <pubDate>Sun, 09 Aug 2020 20:55:36 &#43;0100</pubDate>

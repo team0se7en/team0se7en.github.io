@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Csawquals20 Smallsurp - Team7even</title><meta name="Description" content="Writeup for CSAW CTF 2020, challenge name: Web RTC"><meta property="og:title" content="Csawquals20 Smallsurp" />
+<meta property="og:description" content="Writeup for CSAW CTF 2020, challenge name: Web RTC" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://team0se7en.github.io/csawquals20-smallsurp/" />
+<meta property="og:image" content="https://team0se7en.github.io/csawquals20-smallsurp/featured.png"/>
+<meta property="article:published_time" content="2020-09-15T18:29:43+01:00" />
+<meta property="article:modified_time" content="2020-09-15T18:29:43+01:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://team0se7en.github.io/csawquals20-smallsurp/featured.png"/>
+<meta name="twitter:title" content="Csawquals20 Smallsurp"/>
+<meta name="twitter:description" content="Writeup for CSAW CTF 2020, challenge name: Web RTC"/>
+<meta name="application-name" content="Team7even">
+<meta name="apple-mobile-web-app-title" content="Team7even"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://team0se7en.github.io/csawquals20-smallsurp/" /><link rel="prev" href="https://team0se7en.github.io/csawquals20-webrtc/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Csawquals20 Smallsurp",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/team0se7en.github.io\/csawquals20-smallsurp\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/team0se7en.github.io\/csawquals20-smallsurp\/featured.png",
+                            "width":  1739 ,
+                            "height":  467 
+                        }],"genre": "posts","keywords": "crypto, shamir, shamir-secret-scheme, math, number-theory, csawquals20","wordcount":  1321 ,
+        "url": "https:\/\/team0se7en.github.io\/csawquals20-smallsurp\/","datePublished": "2020-09-15T18:29:43+01:00","dateModified": "2020-09-15T18:29:43+01:00","publisher": {
+            "@type": "Organization",
+            "name": "Team7even","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/team0se7en.github.io\/images\/logo.png",
+                    "width":  200 ,
+                    "height":  200 
+                }},"author": {
+                "@type": "Person",
+                "name": "akram"
+            },"description": "Writeup for CSAW CTF 2020, challenge name: Web RTC"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Team7even"><span class="header-title-pre"><i class='fas fa-skull-crossbones'></i></span>Team7even</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search for writeups/Walkthrough&#39;s" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Team7even"><span class="header-title-pre"><i class='fas fa-skull-crossbones'></i></span>Team7even</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search for writeups/Walkthrough&#39;s" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Csawquals20 Smallsurp</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/akram09" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>akram</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf-writeups/"><i class="far fa-folder fa-fw"></i>CTF Writeups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-15">2020-09-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1321 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/csawquals20-smallsurp/featured.png"
+        data-srcset="/csawquals20-smallsurp/featured.png, /csawquals20-smallsurp/featured.png 1.5x, /csawquals20-smallsurp/featured.png 2x"
+        data-sizes="auto"
+        alt="/csawquals20-smallsurp/featured.png"
+        title="Writeup for CSAW CTF 2020, challenge name: Web RTC" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#writeup-summary">Writeup summary</a></li>
+    <li><a href="#challenge-info">Challenge Info</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#attachment">Attachment:</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#tl-dr">TL-DR</a></li>
+    <li><a href="#analysis-of-the-server-code">Analysis of the server code</a></li>
+    <li><a href="#bypass-hmac-verification">Bypass Hmac Verification</a></li>
+    <li><a href="#assemble-secrets-and-get-flag">Assemble Secrets and Get Flag</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="writeup-summary">Writeup summary</h2>
+<ul>
+<li>Challenge Info</li>
+<li>TL-DR</li>
+<li>Analysis of the server code</li>
+<li>Bypass Hmac Verification</li>
+<li>Assemble Secrets and Get Flag</li>
+</ul>
+<h2 id="challenge-info">Challenge Info</h2>
+<p>Your APT group scr1pt_k1tt13z breached into a popular enterprise service, but due to inexperience,
+you only got the usernames of the administrators of the service, and an encrypted password for the root admin.
+However, you learned that the company had a key agreement ceremony at
+some point in time, and the administrators keys are all somehow connected to the root admin&rsquo;s. <code>http://crypto.chal.csaw.io:5005/</code></p>
+<h4 id="attachment">Attachment:</h4>
+<ul>
+<li>server_handout.py</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">import</span> <span class="nn">flask</span>
+
+<span class="kn">from</span> <span class="nn">gen_db</span> <span class="kn">import</span> <span class="n">DATABASE</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">secret_key</span> <span class="o">=</span> <span class="s2">&#34;dljsaklqk24e21cjn!Ew@@dsa5&#34;</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&#34;00ab76f585834c3c2b7b7b2c8a04c66571539fa660d39762e338cd8160589f08e3d223744cb7894ea6b424ebab899983ff61136c8315d9d03aef12bd7c0486184945998ff80c8d3d59dcb0196fb2c37c43d9cbff751a0745b9d796bcc155cfd186a3bb4ff6c43be833ff1322693d8f76418a48a51f43d598d78a642072e9fff533&#34;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">salt</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">32</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">gen_seed</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">xor_data</span><span class="p">(</span><span class="n">binary_data_1</span><span class="p">,</span> <span class="n">binary_data_2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">b1</span> <span class="o">^</span> <span class="n">b2</span> <span class="k">for</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">binary_data_1</span><span class="p">,</span> <span class="n">binary_data_2</span><span class="p">)])</span>
+
+<span class="k">def</span> <span class="nf">modular_pow</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponent</span><span class="p">,</span> <span class="n">modulus</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">modulus</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">base</span> <span class="o">%=</span> <span class="n">modulus</span>
+
+    <span class="k">while</span> <span class="n">exponent</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">exponent</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span> <span class="o">*</span> <span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">modulus</span>
+        <span class="n">exponent</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">modulus</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">def</span> <span class="nf">hmac_sha256</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">64</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">sha256</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">64</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">+=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">64</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+
+    <span class="n">o_key_pad</span> <span class="o">=</span> <span class="n">xor_data</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x5c</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="mi">64</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="n">i_key_pad</span> <span class="o">=</span> <span class="n">xor_data</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x36</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="mi">64</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">o_key_pad</span> <span class="o">+</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">i_key_pad</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">hasher</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span> <span class="mi">16</span><span class="p">)</span>
+
+
+<span class="n">app</span><span class="o">.</span><span class="n">jinja_env</span><span class="o">.</span><span class="n">globals</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+    <span class="n">gen_seed</span><span class="o">=</span><span class="n">gen_seed</span><span class="p">,</span>
+    <span class="n">modular_pow</span><span class="o">=</span><span class="n">modular_pow</span><span class="p">,</span>
+    <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;GET&#34;</span><span class="p">,</span> <span class="s2">&#34;POST&#34;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&#34;POST&#34;</span><span class="p">:</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;username&#34;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">username</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">flask</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&#34;Error encountered on server-side.&#34;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;home&#34;</span><span class="p">))</span>
+
+        <span class="n">hmac</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;computed&#34;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">hmac</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;dashboard&#34;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">hmac</span><span class="o">=</span><span class="n">hmac</span><span class="p">))</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">pwd</span> <span class="o">=</span> <span class="n">DATABASE</span><span class="p">[</span><span class="n">username</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">flask</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&#34;Cannot find password for username in database&#34;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;home&#34;</span><span class="p">))</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;token1&#34;</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">flask</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&#34;Error encountered on server-side&#34;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;home&#34;</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">flask</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&#34;Error encountered on server-side.&#34;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;home&#34;</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">A</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">]:</span>
+            <span class="n">flask</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&#34;Error encountered on server-side. &gt;:)&#34;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;home&#34;</span><span class="p">))</span>
+
+        <span class="n">xH</span> <span class="o">=</span> <span class="n">hasher</span><span class="p">(</span><span class="n">salt</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pwd</span><span class="p">))</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">modular_pow</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">xH</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="n">modular_pow</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span> <span class="o">%</span> <span class="n">N</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">hasher</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">modular_pow</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">modular_pow</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">N</span><span class="p">),</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+        <span class="n">K</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+        <span class="n">flask</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s2">&#34;server_hmac&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hmac_sha256</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">salt</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">jsonify</span><span class="p">(</span><span class="n">nacl</span><span class="o">=</span><span class="n">salt</span><span class="p">,</span> <span class="n">token2</span><span class="o">=</span><span class="n">B</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">render_template</span><span class="p">(</span><span class="s2">&#34;home.html&#34;</span><span class="p">)</span>
+
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s2">&#34;/dash/&lt;user&gt;&#34;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;POST&#34;</span><span class="p">,</span> <span class="s2">&#34;GET&#34;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">dashboard</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s2">&#34;hmac&#34;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">:</span>
+        <span class="n">flask</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&#34;Error encountered on server-side.&#34;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;home&#34;</span><span class="p">))</span>
+
+    <span class="n">hmac</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="s2">&#34;hmac&#34;</span><span class="p">]</span>
+    <span class="n">servermac</span> <span class="o">=</span> <span class="n">flask</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;server_hmac&#34;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">hmac</span><span class="p">,</span> <span class="n">servermac</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">hmac</span> <span class="o">!=</span> <span class="n">servermac</span><span class="p">:</span>
+        <span class="n">flask</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&#34;Incorrect password.&#34;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;home&#34;</span><span class="p">))</span>
+
+    <span class="n">pwd</span> <span class="o">=</span> <span class="n">DATABASE</span><span class="p">[</span><span class="n">user</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">render_template</span><span class="p">(</span><span class="s2">&#34;dashboard.html&#34;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="n">pwd</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>database.txt</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">Jere:
+Lakisha:
+Loraine:
+Ingrid:
+Orlando:
+Berry:
+Alton:
+Bryan:
+Kathryn:
+Brigitte:
+Dannie:
+Jo:
+Leslie:
+Adrian:
+Autumn:
+Kellie:
+Alphonso:
+Joel:
+Alissa:
+Rubin:
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>encrypted.txt</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">cbc:254dc5ae7bb063ceaf3c2da953386948:08589c6b40ab64c434064ec4be41c9089eefc599603bc7441898c2e8511d03f6
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="tl-dr">TL-DR</h2>
+<p>we have a webiste <code>http://crypto.chal.csaw.io:5005/</code> containing a login form where the server authenthicate users and add the hmac to the session, there is a <code>/home</code> where server verify the hmac and show the user password so as an attacker we have to get all users password and then assemble them with SHAMIR SECRET SHARING SCHEMA to decrypt the flag.</p>
+<h2 id="analysis-of-the-server-code">Analysis of the server code</h2>
+<p>by checking the server code we can say that it is a flask application that has 2 routes:</p>
+<ul>
+<li><code>/</code> : handle POST request where we can submit the username and password the essential POST parametre are <code>{token1, username }</code> when we check the source code of the webpage we can see that <code>token1</code> is an int value constant that is passed when user log in, then it is making some validation on the value of <code>token1</code> :</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"> <span class="k">try</span><span class="p">:</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;token1&#34;</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+       <span class="n">flask</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&#34;Error encountered on server-side&#34;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;home&#34;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">A</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">flask</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&#34;Error encountered on server-side.&#34;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;home&#34;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">A</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">]:</span>
+        <span class="n">flask</span><span class="o">.</span><span class="n">flash</span><span class="p">(</span><span class="s2">&#34;Error encountered on server-side. &gt;:)&#34;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">flask</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;home&#34;</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>we can notice one thing that is strange <code>if A in [0, N]:</code> which mean that A can be any value except 0 and N, then server calculate the hmac based on the value of A and password then save it in the session:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">xH</span> <span class="o">=</span> <span class="n">hasher</span><span class="p">(</span><span class="n">salt</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pwd</span><span class="p">))</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">modular_pow</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">xH</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="n">modular_pow</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span> <span class="o">%</span> <span class="n">N</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">hasher</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">modular_pow</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">modular_pow</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">N</span><span class="p">),</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">K</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<span class="n">flask</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s2">&#34;server_hmac&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hmac_sha256</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">salt</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>and then return the <code>salt</code> used in the calculation of hmac and return <code>B</code></p>
+<ul>
+<li><code>/dash/&lt;user&gt;</code>: it check the <code>hmac</code> we send with the <code>hmac</code> saved in the session if its the same it will redirect to <code>dashboard.html</code> which will show us the password</li>
+</ul>
+<h2 id="bypass-hmac-verification">Bypass Hmac Verification</h2>
+<p>To bypass the hmac verfication we have to get back to how the hmac is calculated and get back on what we have noticed back then. So what we can controll is the <code>username</code> and the value of <code>A</code>.
+By looking more deeper in the calculation of the hmac we can notice it is calculation <code>S = modular_pow(A * modular_pow(v, u, N), b, N)</code> and this value will be used in sha2 hash to get the hmac so if we can know the value of <code>S</code> we can calculate the hmac locally and bypass it. but how can we get the value of <code>S</code>.</p>
+<p>In the first part we noticed <code>A</code> is validated in a strange way <code>if A in [0, N]:</code> this is to make sure S !=0 but we can send A=2*N which will make <code>S=0</code> and the salt is sent to us we can calculate the hmac locally !!! .let&rsquo;s scipt it :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">BASE_URL</span> <span class="o">=</span> <span class="s1">&#39;http://crypto.chal.csaw.io:5005/&#39;</span>
+<span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;username&#34;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span>
+        <span class="s2">&#34;token1&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+    <span class="n">salt</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="s2">&#34;nacl&#34;</span><span class="p">]</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="n">hmac</span> <span class="o">=</span> <span class="n">hmac_sha256</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">salt</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;computed&#34;</span><span class="p">:</span> <span class="n">hmac</span><span class="p">,</span>
+        <span class="s2">&#34;username&#34;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+    <span class="nb">hash</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;td&gt;(.*)&lt;/td&gt;&#39;</span><span class="p">,</span> <span class="n">content</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>with this script we can get a list of hashes of each user .</p>
+<h2 id="assemble-secrets-and-get-flag">Assemble Secrets and Get Flag</h2>
+<p>Now that we have all the passwords we can see a pattern in the passwords for example here is the first one <code>1:c4ee528d1e7d1931e512ff263297e25c:128</code> and in the description they said that the passwords are connected to the root password( the flag ), so we need a way to assemble those passwords, after wasting a lot of time testing out different methods i finnaly found the correct one which is using the SHAMIR SECRET SCHEME And was able to decrypt and get the flag <code>flag{n0t_s0_s3cur3_4ft3r_4ll}</code>
+here is what i did to decrypt it :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Protocol.SecretSharing</span> <span class="kn">import</span> <span class="n">Shamir</span>
+<span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
+<span class="kn">from</span> <span class="nn">binascii</span> <span class="kn">import</span> <span class="n">unhexlify</span>
+<span class="n">shares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">hash</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hashes</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+    <span class="n">shares</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">hash</span><span class="p">,</span> <span class="mi">16</span><span class="p">)))</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">Shamir</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">shares</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">IV</span> <span class="o">=</span> <span class="n">unhexlify</span><span class="p">(</span><span class="s1">&#39;254dc5ae7bb063ceaf3c2da953386948&#39;</span><span class="p">)</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_CBC</span><span class="p">,</span> <span class="n">IV</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">unhexlify</span><span class="p">(</span>
+    <span class="s1">&#39;08589c6b40ab64c434064ec4be41c9089eefc599603bc7441898c2e8511d03f6&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-09-15</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/csawquals20-smallsurp/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://team0se7en.github.io/csawquals20-smallsurp/" data-title="Csawquals20 Smallsurp" data-via="team7even1" data-hashtags="crypto,shamir,shamir-secret-scheme,math,number-theory,csawquals20"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://team0se7en.github.io/csawquals20-smallsurp/" data-hashtag="crypto"><i class="fab fa-facebook-square fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/crypto/">crypto</a>,&nbsp;<a href="/tags/shamir/">shamir</a>,&nbsp;<a href="/tags/shamir-secret-scheme/">shamir-secret-scheme</a>,&nbsp;<a href="/tags/math/">math</a>,&nbsp;<a href="/tags/number-theory/">number-theory</a>,&nbsp;<a href="/tags/csawquals20/">csawquals20</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/csawquals20-webrtc/" class="prev" rel="prev" title="CsawQuals2020 WebRTC "><i class="fas fa-angle-left fa-fw"></i>CsawQuals2020 WebRTC </a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">member</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="https://team07even.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-174974975-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-174974975-1" async></script></body>
+</html>
