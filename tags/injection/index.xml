@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>injection - Tag - Team7even</title>
+        <link>https://team0se7en.github.io/tags/injection/</link>
+        <description>injection - Tag - Team7even</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>a.boutouchent@esi-sba.dz (member)</managingEditor>
+            <webMaster>a.boutouchent@esi-sba.dz (member)</webMaster><lastBuildDate>Thu, 02 Jun 2022 10:55:36 &#43;0100</lastBuildDate><atom:link href="https://team0se7en.github.io/tags/injection/" rel="self" type="application/rss+xml" /><item>
+    <title>Hackini 10th 2022 Challenge Creator</title>
+    <link>https://team0se7en.github.io/hackini-10th-challenge-creator/</link>
+    <pubDate>Thu, 02 Jun 2022 10:55:36 &#43;0100</pubDate>
+    <author>vvxhid</author>
+    <guid>https://team0se7en.github.io/hackini-10th-challenge-creator/</guid>
+    <description><![CDATA[@chenx3en created a fun XSS challenge in HackINI 2022 ctf.
+TL; DR  HTML injection in the title tag. CSP injection. Prototype pollution and XSS  Overview When we visit the website link, we will be presented with a form to create a ctf challenge and share it with the admin (bot):
+After completing and submitting the form, we see a query parameter named challenge that has a JSON string including all of the supplied data.]]></description>
+</item>
+</channel>
+</rss>
