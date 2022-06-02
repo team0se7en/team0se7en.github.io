@@ -8,16 +8,18 @@
     <title>Csawquals20 Smallsurp</title>
     <link>https://team0se7en.github.io/csawquals20-smallsurp/</link>
     <pubDate>Tue, 15 Sep 2020 18:29:43 &#43;0100</pubDate>
-    <author>Author</author>
+    <author>akram</author>
     <guid>https://team0se7en.github.io/csawquals20-smallsurp/</guid>
     <description><![CDATA[Writeup summary  Challenge Info TL-DR Analysis of the server code Bypass Hmac Verification Assemble Secrets and Get Flag  Challenge Info Your APT group scr1pt_k1tt13z breached into a popular enterprise service, but due to inexperience, you only got the usernames of the administrators of the service, and an encrypted password for the root admin. However, you learned that the company had a key agreement ceremony at some point in time, and the administrators keys are all somehow connected to the root admin&rsquo;s.]]></description>
-</item><item>
+</item>
+<item>
     <title>Pwn2win2020 Androids Encryption</title>
     <link>https://team0se7en.github.io/pwn2win2020-androids-encryption/</link>
     <pubDate>Sun, 09 Aug 2020 20:55:36 &#43;0100</pubDate>
-    <author>Author</author>
+    <author>kero</author>
     <guid>https://team0se7en.github.io/pwn2win2020-androids-encryption/</guid>
     <description><![CDATA[Challenge Info ​	The challenge is a crypto challenge from the pwn2win event , it&rsquo;s focused on the symmetric cryptography and especially the aes block cipher.So we are given remote connection nc encryption.pwn2.win 1337 and the python script that is running in the remote server.py .
 Writeup Summary   gain general information   deep look into encrypt your secret   Solution   gain general information ​	By the first look at the server.]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

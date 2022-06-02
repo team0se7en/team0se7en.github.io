@@ -4,14 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Cybrics2020 Otp - Team7even</title><meta name="Description" content="Writeup for Cybrics CTF 2020, challenge name: OTP"><meta property="og:title" content="Cybrics2020 Otp" />
 <meta property="og:description" content="Writeup for Cybrics CTF 2020, challenge name: OTP" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://team0se7en.github.io/cybrics2020-otp/" />
-<meta property="og:image" content="https://team0se7en.github.io/cybrics2020-otp/featured.png"/>
+<meta property="og:url" content="https://team0se7en.github.io/cybrics2020-otp/" /><meta property="og:image" content="https://team0se7en.github.io/cybrics2020-otp/featured.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-08T17:43:09+01:00" />
-<meta property="article:modified_time" content="2020-08-08T17:43:09+01:00" />
+<meta property="article:modified_time" content="2020-08-08T17:43:09+01:00" /><meta property="og:site_name" content="My cool site" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://team0se7en.github.io/cybrics2020-otp/featured.png"/>
 <meta name="twitter:title" content="Cybrics2020 Otp"/>
@@ -19,7 +18,9 @@
 <meta name="application-name" content="Team7even">
 <meta name="apple-mobile-web-app-title" content="Team7even"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://team0se7en.github.io/cybrics2020-otp/" /><link rel="next" href="https://team0se7en.github.io/pwn2win2020-androids-encryption/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://team0se7en.github.io/cybrics2020-otp/" /><link rel="next" href="https://team0se7en.github.io/pwn2win2020-androids-encryption/" /><link rel="stylesheet" href="/css/style.min.3c197b208f9b5823aeba4a4b2e21743cb9ba6d05a1019cd4d6eb0cddfbbe9964.css" integrity="sha256-PBl7II+bWCOuukpLLiF0PLm6bQWhAZzU1usM3fu+mWQ="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -47,7 +48,7 @@
             },"description": "Writeup for Cybrics CTF 2020, challenge name: OTP"
     }
     </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -58,16 +59,16 @@
             <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search for writeups/Walkthrough&#39;s" id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -86,37 +87,35 @@
                     <div class="search mobile" id="search-mobile">
                         <input type="text" placeholder="Search for writeups/Walkthrough&#39;s" id="search-input-mobile">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
                         </span>
                     </div>
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
                 </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Cybrics2020 Otp</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/Fa2y" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Fa2y</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf-writeups/"><i class="far fa-folder fa-fw"></i>CTF Writeups</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-08">2020-08-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;704 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Cybrics2020 Otp</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/Fa2y" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Fa2y</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf-writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>CTF Writeups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-08-08">2020-08-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;704 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -124,10 +123,10 @@
         data-srcset="/cybrics2020-otp/featured.png, /cybrics2020-otp/featured.png 1.5x, /cybrics2020-otp/featured.png 2x"
         data-sizes="auto"
         alt="/cybrics2020-otp/featured.png"
-        title="Writeup for Cybrics CTF 2020, challenge name: OTP" /></div><div class="details toc" id="toc-static"  kept="">
+        title="Writeup for Cybrics CTF 2020, challenge name: OTP" /></div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
@@ -145,9 +144,8 @@
 </nav></div>
             </div><div class="content" id="content"><h2 id="challenge-info">Challenge Info</h2>
 <p>A crack the box challenge (hackthebox/vulnhub-like) <code>http://otp-cybrics2020.ctf.su/</code> the web-page provides a input for auth token and a the client binary and the server&rsquo;s, and the source code of the server.</p>
-<figure>
-    <img src="webpage.png"
-         alt="page"/> <figcaption>
+<figure><img src="webpage.png"
+         alt="page"/><figcaption>
             <h4>Main Page</h4>
         </figcaption>
 </figure>
@@ -165,18 +163,17 @@
 <p>The client binary can be used to login or register an account, the login mechanism do it&rsquo;s magic and get u a token :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">./client login -l user7 -p userpass7
-Response: SUCCESS: ac003f82-edfc-4855-b761-bdc59406d8d4
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./client login -l user7 -p userpass7
+</span></span><span class="line"><span class="cl">Response: SUCCESS: ac003f82-edfc-4855-b761-bdc59406d8d4
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The token can be submitted into the webpage but get nothing because we&rsquo;re not admin:</p>
-<figure>
-    <img src="not_admin.png"
-         alt="page"/> <figcaption>
+<figure><img src="not_admin.png"
+         alt="page"/><figcaption>
             <h4>Cabinet Page</h4>
         </figcaption>
 </figure>
@@ -186,18 +183,16 @@ The server binary we can understand it&rsquo;s functionality from the source cod
 PS: the server&rsquo;s code import mongodb configs (username,pass, host,port) from a .env file but still uses hardcoded creds, dbname and collection.</p>
 <h3 id="blackbox-analyses">Blackbox Analyses</h3>
 <p>Both the client and the server were written in go, we first tried reverse engineering it but we all know how messy that can be, so we tried some black box analyses, First we analyzed the network using strace : <code>strace -f -e trace=network ./client login -l user7 -p userpass7</code></p>
-<figure>
-    <img src="strace.png"
-         alt="page"/> <figcaption>
+<figure><img src="strace.png"
+         alt="page"/><figcaption>
             <h4>Strace</h4>
         </figcaption>
 </figure>
 
 <p>We see the client app resolves the domain <code>otp-cybrics2020.ctf.su</code> and gets it&rsquo;s ip address <code>34.76.112.206</code> but we can&rsquo;t get how the data is sent, so we decide to capture the network sent to that specific ip, we used tcpdump : <code>tcpdump -i wlp7s0 dst 34.76.112.206 -w Capture.pcap</code></p>
 <p>Taking a look at the capture with wireshark:</p>
-<figure>
-    <img src="wireshark.png"
-         alt="page"/> <figcaption>
+<figure><img src="wireshark.png"
+         alt="page"/><figcaption>
             <h4>Wireshark</h4>
         </figcaption>
 </figure>
@@ -219,7 +214,7 @@ We can connect right to the db away : <code>mongo -u admin -p admin --authentica
 <p>We already know the schema from the source so we right away query the admin user</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -228,20 +223,19 @@ We can connect right to the db away : <code>mongo -u admin -p admin --authentica
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; use cybrics
-switched to db cybrics
-&gt; db
-cybrics
-&gt; db.users.find({username : &#34;admin&#34;})
-{ &#34;_id&#34; : ObjectId(&#34;5f1ae2e97e2bd0263657b0ee&#34;), &#34;username&#34; : &#34;admin&#34;, &#34;password&#34; : &#34;j77d32g72373ggasdkasdGG&amp;SD&#34;, &#34;otp&#34; : &#34;f41a137f-aeb0-4518-9d20-2aafc4fcb90f&#34; }
-&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; use cybrics
+</span></span><span class="line"><span class="cl">switched to db cybrics
+</span></span><span class="line"><span class="cl">&gt; db
+</span></span><span class="line"><span class="cl">cybrics
+</span></span><span class="line"><span class="cl">&gt; db.users.find({username : &#34;admin&#34;})
+</span></span><span class="line"><span class="cl">{ &#34;_id&#34; : ObjectId(&#34;5f1ae2e97e2bd0263657b0ee&#34;), &#34;username&#34; : &#34;admin&#34;, &#34;password&#34; : &#34;j77d32g72373ggasdkasdGG&amp;SD&#34;, &#34;otp&#34; : &#34;f41a137f-aeb0-4518-9d20-2aafc4fcb90f&#34; }
+</span></span><span class="line"><span class="cl">&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We get the admin&rsquo;s otp : <code>f41a137f-aeb0-4518-9d20-2aafc4fcb90f</code>
 We submit it in the web to get the flag:</p>
-<figure>
-    <img src="flag.png"
-         alt="page"/> <figcaption>
+<figure><img src="flag.png"
+         alt="page"/><figcaption>
             <h4>Flag</h4>
         </figcaption>
 </figure>
@@ -252,44 +246,42 @@ We submit it in the web to get the flag:</p>
         <div class="post-info-line">
             <div class="post-info-mod">
                 <span>Updated on 2020-08-08</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
+            </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
                             <a class="link-to-markdown" href="/cybrics2020-otp/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://team0se7en.github.io/cybrics2020-otp/" data-title="Cybrics2020 Otp" data-via="team7even1" data-hashtags="linux,ctb,cybrics-ctf,ssh"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://team0se7en.github.io/cybrics2020-otp/" data-hashtag="linux"><i class="fab fa-facebook-square fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://team0se7en.github.io/cybrics2020-otp/" data-title="Cybrics2020 Otp" data-via="team7even1" data-hashtags="linux,ctb,cybrics-ctf,ssh"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://team0se7en.github.io/cybrics2020-otp/" data-hashtag="linux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://team0se7en.github.io/cybrics2020-otp/" data-title="Cybrics2020 Otp"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://team0se7en.github.io/cybrics2020-otp/" data-title="Cybrics2020 Otp"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://team0se7en.github.io/cybrics2020-otp/" data-title="Cybrics2020 Otp"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">linux</a>,&nbsp;<a href="/tags/ctb/">ctb</a>,&nbsp;<a href="/tags/cybrics-ctf/">cybrics-ctf</a>,&nbsp;<a href="/tags/ssh/">ssh</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">linux</a>,&nbsp;<a href="/tags/ctb/">ctb</a>,&nbsp;<a href="/tags/cybrics-ctf/">cybrics-ctf</a>,&nbsp;<a href="/tags/ssh/">ssh</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
-            <a href="/pwn2win2020-androids-encryption/" class="next" rel="next" title="Pwn2win2020 Androids Encryption">Pwn2win2020 Androids Encryption<i class="fas fa-angle-right fa-fw"></i></a></div>
+            <a href="/pwn2win2020-androids-encryption/" class="next" rel="next" title="Pwn2win2020 Androids Encryption">Pwn2win2020 Androids Encryption<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">member</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">member</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="https://team07even.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="https://team07even.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.c1d5acc03abc8af9ee0a42aa4e942566a338a3e29d21b6c9f11536101f6914ad.js" integrity="sha256-wdWswDq8ivnuCkKqTpQlZqM4o+KdIbbJ8RU2EB9pFK0="></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'UA-174974975-1', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-174974975-1" async></script></body>
